@@ -1,3 +1,9 @@
+# ============================================================
+# Unity 面试刷题项目
+# 注意：本仓库刻意**不**忽略 *.csproj / *.sln —— answers/ 里的
+# AlgorithmDrill 工程文件是答题区的一部分，需要纳入版本管理。
+# ============================================================
+
 # ---- Python ----
 __pycache__/
 *.py[cod]
@@ -7,8 +13,12 @@ __pycache__/
 .vscode/
 *.user
 *.suo
+*.userprefs
+*.DotSettings.user
+ExportedObj/
+.consulo/
 
-# ---- .NET 构建产物 ----
+# ---- .NET / Unity 构建产物 ----
 bin/
 obj/
 [Ll]ibrary/
@@ -18,11 +28,35 @@ obj/
 [Bb]uilds/
 [Ll]ogs/
 [Uu]ser[Ss]ettings/
+.utmp/
 *.log
 *.pdb
 *.mdb
+*.pidb
+*.tmp
 
-# ---- 临时抓取 / 验证目录 ----
+# ---- Unity 相关 ----
+*.unitypackage
+*.unitypackage.meta
+*.apk
+*.aab
+*.app
+*.blend1
+*.blend1.meta
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+/ServerData
+/[Aa]ssets/StreamingAssets/aa*
+/[Aa]ssets/AddressableAssetsData/link.xml*
+/[Aa]ssets/Addressables_Temp*
+/[Aa]ssets/AddressableAssetsData/*/*.bin*
+/[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+/[Aa]ssets/[Ss]ceneDependencyCache*
+sysinfo.txt
+mono_crash.*
+crashlytics-build.properties
+
+# ---- 本项目的临时目录 ----
 .fetch/
 .tmp_verify/
 .tmp_gitcheck/
