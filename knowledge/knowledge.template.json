@@ -1,0 +1,15 @@
+{
+  "_schema": 1,
+  "_note": "这是空模板。首次使用时复制为 knowledge/knowledge.json（knowledge.json 是个人数据，已在 .gitignore 中排除，不会上传）。",
+  "_how_it_grows": "用户每答错一道题，就在对应概念条目下追加/更新：① 该题的错因归类 ② 若这是该概念首次出错，建立条目并写清这个概念的核心要点 ③ 每隔一段时间把同一概念下反复出现的错因合并提炼。",
+  "_error_categories": {
+    "boundary": "边界/退化情况没考虑（空值、零向量、极值、精度）",
+    "concept": "概念理解有偏差（记反了、混淆了两个相近概念）",
+    "derivation": "知道结论但推不出过程",
+    "application": "知道原理但不知道在什么场景用",
+    "detail": "细节遗漏（版本差异、参数含义、API 语义）",
+    "unfamiliar": "完全没接触过"
+  },
+  "concepts": {},
+  "updated_at": null
+}

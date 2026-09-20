@@ -14,9 +14,11 @@ Unity 面试每日刷题。七类题目：算法、八股、设计、数学、�
 
 - `config/config.json` — 配置（默认题数、类型、难度、联网开关）
 - `bank/{algorithm,bagu,design,math,cs_basics,rendering,plugins}.json` — 题库
-- `history/history.json` — 出题与答题状态
-- `knowledge/knowledge.json` — 概念知识库（按概念组织，随错题生长）
+- `history/history.json` — 出题与答题状态（**个人数据，不入库**，仓库只有 `history.template.json`）
+- `knowledge/knowledge.json` — 概念知识库（同上，仓库只有 `knowledge.template.json`）
 - `answers/` — 答题区；`tools/make_answers.py` — 答题区生成/解析脚本
+
+**首次使用**（`history/history.json` 或 `knowledge/knowledge.json` 不存在时）：先复制对应模板再开始出题，并把 `start_date` 设为今天。用户说过「清空重来」时也走这条路（把模板覆盖回去），但**先确认**，别擅自重置已积累的进度。
 
 ## 类型与 id
 

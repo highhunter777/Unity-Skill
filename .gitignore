@@ -1,8 +1,16 @@
 # ============================================================
 # Unity 面试刷题项目
-# 注意：本仓库刻意**不**忽略 *.csproj / *.sln —— answers/ 里的
-# AlgorithmDrill 工程文件是答题区的一部分，需要纳入版本管理。
+# 注意 1：本仓库刻意**不**忽略 *.csproj / *.sln —— answers/ 里的
+#         AlgorithmDrill 工程文件是答题区的一部分，需要纳入版本管理。
+# 注意 2：history/ 与 knowledge/ 里**个人刷题数据不入库** ——
+#         仓库只留 *.template.json 空模板，运行时文件由首次使用自动生成。
 # ============================================================
+
+# ---- 个人刷题数据（只提交 *.template.json 空模板）----
+history/history.json
+history/history.backup-*.json
+history/history.backup.json
+knowledge/knowledge.json
 
 # ---- Python ----
 __pycache__/
@@ -65,3 +73,10 @@ crashlytics-build.properties
 Thumbs.db
 .DS_Store
 desktop.ini
+
+# ---- 本机个人数据备份（不上传）----
+.local_backup/
+.git.bak_before_rewrite/
+
+# ---- Office 临时文件 ----
+~$*
