@@ -1,6 +1,6 @@
 ---
 name: unity-interview-drill
-description: Unity 面试每日刷题。当用户说"Unity刷题""Unity每日一题""出N道Unity[类型]题""今天来2道数学、2道计算机基础、1道算法""出一道渲染题""出一道插件题""出一道场景题""出一道决策题""只出错题""查看错题本""清空错题""重置历史""同步""统计"时使用。支持算法、八股、设计、数学考察、计算机基础、渲染/TA、第三方插件（HybridCLR/xLua/YooAsset/UniTask）七类题目，含故障场景题与决策场景题、间隔重复、错题本、难度筛选、自动验证与多设备同步。
+description: Unity 面试每日刷题。当用户说"Unity刷题""Unity每日一题""出N道Unity[类型]题""今天来2道数学、2道计算机基础、1道算法""出一道渲染题""出一道插件题""出一道数据结构题""出一道场景题""出一道决策题""只出错题""查看错题本""清空错题""重置历史""同步""统计"时使用。支持算法、八股、设计、数学考察、计算机基础（含数据结构）、渲染/TA、第三方插件（HybridCLR/xLua/YooAsset/UniTask）七类题目，含故障场景题与决策场景题、间隔重复、错题本、难度筛选、自动验证与多设备同步。
 ---
 
 # Unity Interview Daily Drill
@@ -121,6 +121,7 @@ read_cs()         # → {qid: {'code','solved'}}，读 Algorithm.cs
 - `只出错题` / `查看错题本` — 从 `wrong_book` 出题 / 列出错题
 - `查看知识库` / `查 <概念名>` — 概念组统计 / 该概念下全部题目与错因
 - `出一道插件题` / `只出 yooasset 的题` — 插件题（`subtype`：`hybridclr` / `xlua` / `yooasset` / `unitask` / `scenario_design` / `scenario_decision`，可按子类筛）
+- `出一道数据结构题` / `只出数据结构` — 走 `cs_basics` 的 `data_structure` 子类（还可以说 `只出树和图的` / `跳过哈希表`，都是在该子类内再筛）
 - `出一道场景题` / `出一道故障场景题` / `出一道决策题` / `出一道选型题` — 场景类题（故障根因用 `scenario_design`；约束下做选择用 `scenario_decision`）
 - `算法题用 acm 形式` — 指定算法题形式（默认 leetcode）
 - `算法题做完了` / `已作答` — 读回答题区，验证并记录结果
@@ -132,6 +133,8 @@ read_cs()         # → {qid: {'code','solved'}}，读 Algorithm.cs
 ## 出题侧重
 
 **`math` / `cs_basics`** —— 标准只有一条：**出游戏开发面试会问的题**。判断方法：想象一个 Unity 客户端岗位的面试官会不会问这道题。这条界定了边界：不会让人手算投影向量、不会考跟引擎无关的纯数学、不会要求现场证明公式。参考考点：math 是向量/变换/四元数/几何求交/插值/浮点/随机数；cs_basics 是数据结构/操作系统/网络/帧同步确定性/数据库索引。答案要写出**方法或原理**并说清怎么用；"已知 X 求 Y"的计算题面试官不会问。
+
+`cs_basics` 里 `data_structure` 是最大的子类，覆盖：数组/链表/动态数组与扩容、栈与队列（含环形缓冲）、哈希表与 Dictionary 的 key 语义、树（BST/平衡树/堆/Trie/线段树与树状数组）、图（最短路/拓扑排序/并查集）。出这一子类时要和 `algorithm` 分开：**`algorithm` 考「手写实现 + 复杂度」，`cs_basics.data_structure` 考「为什么这样设计、工程上怎么选、游戏里用在哪」**。例如「反转链表」属于 `algorithm`，「栈和队列的区别与游戏应用」属于 `cs_basics`。
 
 **`rendering`（渲染/TA）** —— 与 `math` 的区别：`math` 考数学方法本身，`rendering` 考渲染管线的实现与原理。范围：管线各阶段、坐标空间、混合与透明、贴图（法线/AO/MipMap/光照贴图）、光照模型（BlinnPhong/PBR/BRDF）、阴影、抗锯齿（MSAA/TAA/FXAA）、后处理（Bloom/色调映射/Gamma）、剔除与性能（DrawCall/合批/LOD/Overdraw）、管线选型（URP/HDRP/SRP）、Shader 编程。**只收有标准答案的技术题** —— "你对 TA 的理解""看过哪些博主""职业规划"这类开放题不收。
 
