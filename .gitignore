@@ -1,0 +1,33 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+
+# ---- 编辑器 / IDE ----
+.vs/
+.vscode/
+*.user
+*.suo
+
+# ---- .NET 构建产物 ----
+bin/
+obj/
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+*.log
+*.pdb
+*.mdb
+
+# ---- 临时抓取 / 验证目录 ----
+.fetch/
+.tmp_verify/
+.tmp_gitcheck/
+
+# ---- OS ----
+Thumbs.db
+.DS_Store
+desktop.ini

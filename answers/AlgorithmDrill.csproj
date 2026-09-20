@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <!-- net9.0：VS 2022 17.14 最高支持到此，改高会导致 VS 无法加载项目 -->
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>InterviewDrill</RootNamespace>
+    <AssemblyName>AlgorithmDrill</AssemblyName>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
+  </PropertyGroup>
+
+</Project>

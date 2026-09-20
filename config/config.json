@@ -1,0 +1,25 @@
+{
+  "default_count": 6,
+  "default_types": [
+    "algorithm",
+    "bagu",
+    "design",
+    "math",
+    "cs_basics",
+    "rendering",
+    "plugins"
+  ],
+  "default_difficulty": "all",
+  "prefer_real_questions": true,
+  "sync": {
+    "enabled": false,
+    "provider": "github_gist",
+    "gist_id": "",
+    "auto_pull_on_start": false,
+    "auto_push_after_update": false
+  },
+  "spaced_repetition": {
+    "enabled": true,
+    "max_review_per_day": 3
+  }
+}
