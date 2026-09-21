@@ -25,8 +25,8 @@ Unity 面试每日刷题。七类题目：算法、八股、设计、数学、�
 | type | 中文 | id 前缀 | 子类（subtype） |
 |---|---|---|---|
 | `algorithm` | 算法题 | `algo_` | 数组/链表/树/图/DP 等 |
-| `bagu` | Unity/C# 八股 | `bagu_` | — |
-| `design` | 设计题 | `design_` | — |
+| `bagu` | Unity/C# 八股 | `bagu_` | `ugui`（Unity UI）及 Unity/C# 基础子类 |
+| `design` | 设计题 | `design_` | `design_pattern`（设计模式）、系统设计子类 |
 | `math` | 数学考察 | `math_` | — |
 | `cs_basics` | 计算机基础 | `cs_basics_` | `data_structure`（数据结构）、`operating_system`、`memory`、`network`、`network_sync`、`database`、`cpp`、`algorithms`、`math_foundation` |
 | `rendering` | 渲染/TA | `rendering_` | — |
@@ -118,6 +118,8 @@ read_cs()         # → {qid: {'code','solved'}}，读 Algorithm.cs
 
 **`rendering`（渲染/TA）** —— 与 `math` 的区别：`math` 考数学方法本身，`rendering` 考渲染管线的实现与原理。范围：管线各阶段、坐标空间、混合与透明、贴图、光照模型、阴影、抗锯齿、后处理、剔除与性能、管线选型、Shader 编程。**只收有标准答案的技术题** —— "你对 TA 的理解""职业规划"这类开放题不收。
 
+**`bagu.ugui`（uGUI）** —— 纳入 Unity 客户端岗位的固定考察范围。覆盖 Canvas 渲染模式与 CanvasScaler、RectTransform 和屏幕/世界坐标转换、EventSystem/Raycaster/事件冒泡、Graphic 与 Canvas rebuild、合批与 Overdraw、LayoutGroup/ContentSizeFitter、ScrollRect 虚拟化、Mask/RectMask2D、TextMeshPro 图集与字体回退。重点考机制、性能定位和取舍：回答应说明“为什么会重建/为什么点不到/为什么不同分辨率错位”，而不是只背组件属性；涉及版本差异时按目标 Unity 版本核对。
+
 **`plugins`（第三方插件）** —— 四个插件的考察范围：`hybridclr`（热更路线、AOT 泛型与补充元数据、程序集划分与裁剪、官方不支持的特性）、`xlua`（C#⇄C⇄Lua 交互与虚拟栈、元表/闭包/require、跨语言 GC 与性能）、`yooasset`（运行模式、句柄与引用计数、分包与零冗余、版本与差量下载）、`unitask`（为什么不用协程/Task、状态机与零 GC、CancellationToken 与生命周期、与 Unity 6 `Awaitable` 的选型）。
 
 两档场景题型（`source_tier: generated` 且 `verified: false`，答案不是唯一解）：
@@ -127,6 +129,8 @@ read_cs()         # → {qid: {'code','solved'}}，读 Algorithm.cs
 出题原则：**考机制与取舍，不考 API 背诵**。答案必须区分**官方文档明说的**与**工程经验的**，版本差异（YooAsset 3.0 移除弱引用句柄、HybridCLR v8.0 支持 extern、Unity 6 提供 `Awaitable`）要写清版本号。**决策题判分看「有没有给判断依据」而非结论** —— 用户的结论与参考答案不同，只要约束分析、代价评估、回退成本说得通就算对；只报方案名不说理由的，即使与参考答案一致也判「不完整」。
 
 **与其他题型的分工**：`design` 是从零设计一个系统（给需求，给类结构、数据流）；`scenario_design` 是从故障反推原因（给现象，给根因、方案、验证）；`scenario_decision` 是在约束下做选择（给候选与死线，给结论、代价、回退）。`algorithm` 侧重思路与复杂度；`bagu` 侧重原理与版本差异。三者不要互相重复。
+
+**设计模式纳入考察**：`design_pattern` 不是背 GoF 定义，而是考察候选人能否识别变化点、选择合适的协作方式并说明代价。覆盖策略（Strategy）、观察者（Observer）、状态（State）、命令（Command）、工厂/抽象工厂（Factory）、装饰器（Decorator）、适配器/外观（Adapter/Facade）以及对象池等 Unity 常见变体。题目至少要落到一个真实场景（技能效果、输入回放、UI/事件、对象生成、资源接口等），回答需包含接口或类结构、调用/生命周期、扩展方式、线程/GC/性能或调试方面的取舍；只写“使用某某模式”而没有判断依据，判为不完整。出设计题时优先保证 `design_pattern` 有覆盖，并与系统设计题交叉考察。
 
 ## 真题来源
 

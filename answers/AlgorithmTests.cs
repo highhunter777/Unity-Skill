@@ -22,18 +22,16 @@ namespace InterviewDrill
 
 
     // ==========================================================
-    // [1] algo_006 · medium · 三数之和
+    // [1] algo_023 · hard · 最大频率栈
     // ==========================================================
-    public static class Solution_algo006_Tests
+    public static class Solution_algo023_Tests
     {
         public static void Run()
         {
-            Console.WriteLine("=== algo_006 三数之和 ===");
-            var s006 = new Solution_algo006();
-            var r006 = s006.ThreeSum(new[] { -1, 0, 1, 2, -1, -4 });
-            Console.WriteLine(string.Join(";", r006.Select(t => string.Join(",", t))) + "  期望 -1,-1,2;-1,0,1");
-            var e006 = s006.ThreeSum(new[] { 0, 0, 0 });
-            Console.WriteLine(string.Join(";", e006.Select(t => string.Join(",", t))) + "  期望 0,0,0");
+            Console.WriteLine("=== algo_023 最大频率栈 ===");
+            var s023 = new Solution_algo023();
+            var popped = s023.Simulate(new[] { 5, 7, 5, 7, 4, 5, 0, 0, 0, 0 });
+            Console.WriteLine(string.Join(",", popped) + "  期望 5,7,5,4");
             Console.WriteLine();
         }
     }
@@ -49,7 +47,7 @@ namespace InterviewDrill
         public static void Main(string[] args)
         {
             Console.WriteLine("Unity 面试刷题 · 算法题自测\n");
-            // Solution_algo006_Tests.Run();   // [1] 三数之和
+            // Solution_algo023_Tests.Run();   // [1] 最大频率栈
             Console.WriteLine("提示: 在 Main 里取消对应测试的注释即可运行。");
         }
     }

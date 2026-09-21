@@ -15,15 +15,15 @@ namespace InterviewDrill
 {
 
     // ----------------------------------------------------------
-    // [1] algo_006 · medium · two_pointers
-    // 三数之和
-    // 找出 nums 中所有和为 0 且下标互不相同的三元组，答案中不能包含重复三元组，要求时间复杂度优于 O(n^3)。
-    // 示例: nums=[-1,0,1,2,-1,-4] → [[-1,-1,2],[-1,0,1]]；nums=[0,0,0] → [[0,0,0]]
+    // [1] algo_023 · hard · design
+    // 最大频率栈
+    // 设计 FreqStack：Pop 返回频率最高的元素，频率相同则返回最近入栈者，Push/Pop 要求均摊 O(1)。
+    // 示例: push 5,7,5,7,4,5 后连续 pop 4 次 → [5,7,5,4]
     // ----------------------------------------------------------
-    public class Solution_algo006
+    public class Solution_algo023
     {
         // TODO: 在此实现（方法必须是 public，否则 AlgorithmTests.cs 里的测试类访问不到）
-        public IList<IList<int>> ThreeSum(int[] nums)
+        public IList<int> Simulate(int[] ops)
         {
             throw new NotImplementedException();
         }
