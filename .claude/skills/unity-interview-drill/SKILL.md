@@ -18,7 +18,9 @@ Unity 面试每日刷题。七类题目：算法、八股、设计、数学、�
 - `knowledge/knowledge.json` — 概念知识库（同上，仓库只有 `knowledge.template.json`）
 - `answers/` — 答题区；`tools/make_answers.py` — 答题区生成/解析脚本
 
-**首次使用**（`history/history.json` 或 `knowledge/knowledge.json` 不存在时）：先复制对应模板再开始出题，并把 `start_date` 设为今天。用户说过「清空重来」时也走这条路（把模板覆盖回去），但**先确认**，别擅自重置已积累的进度。
+**首次使用**（运行时文件不存在时）：先从 `*.template.*` 复制出运行时文件，`history` 的 `start_date` 设为今天。涉及三类：`history/history.json`、`knowledge/knowledge.json`、以及答题区三件套（`answers/Algorithm.cs`、`answers/AlgorithmTests.cs`、`answers/答题区.docx` 从同名 `.template` 文件复制）。用户说过「清空重来」时也走这条路，但**先确认**，别擅自重置已积累的进度。
+
+**答题区是个人数据，不入库**（`.gitignore` 已忽略），仓库只留 `*.template.*` 空模板。工程文件 `AlgorithmDrill.csproj`/`.sln` 仍跟踪。⚠️ csproj 里有 `<Compile Remove="*.template.cs" />` —— 否则模板会被 SDK 默认 glob 编译，与运行时文件重复定义 `Program` 类。
 
 ## 类型与 id
 

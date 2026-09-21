@@ -6,11 +6,21 @@
 #         仓库只留 *.template.json 空模板，运行时文件由首次使用自动生成。
 # ============================================================
 
-# ---- 个人刷题数据（只提交 *.template.json 空模板）----
+# ---- 个人刷题数据（仓库只留空模板）----
 history/history.json
 history/history.backup-*.json
 history/history.backup.json
 knowledge/knowledge.json
+
+# ---- 答题区（每次出题都会重写，属个人数据）----
+# 工程文件 csproj/sln 仍跟踪；下面三个是出题产物，运行时由 tools/make_answers.py 生成
+answers/Algorithm.cs
+answers/AlgorithmTests.cs
+answers/答题区.docx
+# 例外：空模板入库，供首次使用时生成
+!answers/Algorithm.template.cs
+!answers/AlgorithmTests.template.cs
+!answers/答题区.template.docx
 
 # ---- Python ----
 __pycache__/

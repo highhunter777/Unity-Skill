@@ -474,6 +474,11 @@ CSPROJ = f"""<Project Sdk="Microsoft.NET.Sdk">
     <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
   </PropertyGroup>
 
+  <!-- 排除 *.template.cs：它们是空模板，被 SDK 默认 glob 编译会与运行时文件重复定义 -->
+  <ItemGroup>
+    <Compile Remove="*.template.cs" />
+  </ItemGroup>
+
 </Project>
 """
 
